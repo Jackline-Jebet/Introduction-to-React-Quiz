@@ -1,10 +1,11 @@
 import React from "react";
-import logo from './logo.svg';
 import './App.css';
 
 /**
   Challenge: Display all users to the browser
 **/
+
+
 
 const users = [
   { name: "John Doe", id: 1 },
@@ -12,12 +13,17 @@ const users = [
   { name: "Billy Doe", id: 3 }
 ];
 
+// eslint-disable-next-line array-callback-return
+const usersList = users.map((item, index) => {
+  <li key={index}>{item.name}</li>
+});
+
 // comment this out after completion and uncomment code below it to proceed
-function Child() {
-  return <div>This is children content</div>;
-}
-/**
-  Challenge: Uncomment this code to complete quiz
+//function Child() {
+ // return <div>This is children content</div>;
+//}
+
+  //Challenge: Uncomment this code to complete quiz
 
 function Child() {
   return (
@@ -47,29 +53,31 @@ function Parent() {
     </>
   );
 }
-Uncomment this to tackle quiz
-**/
+//Uncomment this to tackle quiz
+
 
 // Comment out after completion
-function Parent() {
-  return (
-    <div>
-      <h3>Parent Component</h3>
-    </div>
-  );
-}
+//function Parent() {
+// return (
+//    <div>
+//      <h3>Parent Component</h3>
+//    </div>
+//  );
+//}
 // Comment above code after completion
 
 function App() {
+  // eslint-disable-next-line no-empty-pattern
   const [] = React.useState(true);
   return (
     
-    <>
-    
-    <img src={logo} className="App-logo" alt="logo" />
+    <>    
+    <img src={"logo.jpg"} className="App-logo" alt="logo" />
+    <p>JSX is cool!</p>
       <h3>User names</h3>
-      <ul></ul>
+      <ul>{usersList}</ul>
       <button>Hide Element Below</button>
+      
 
       <div>Toggle Challenge</div>
       <Parent>
